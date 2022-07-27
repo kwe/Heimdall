@@ -26,7 +26,7 @@ public class Function
       var apiOptions = new ApiOptions(methodArn.Region, methodArn.RestApiId, methodArn.Stage);
 
       var policyBuilder = new AuthPolicyBuilder(principalId, methodArn.AwsAccountId, apiOptions);
-      policyBuilder.AllowAllMethods();
+      policyBuilder.DenyAllMethods();
 
       var authResponse = policyBuilder.Build();
       context.Logger.LogLine($"{nameof(authResponse)}: {authResponse}");
