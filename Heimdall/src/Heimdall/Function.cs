@@ -29,6 +29,7 @@ public class Function
       policyBuilder.AllowAllMethods();
 
       var authResponse = policyBuilder.Build();
+      context.Logger.LogLine($"{nameof(authResponse)}: {authResponse}");
 
       return authResponse;
 
