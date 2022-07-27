@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using System.Collections.Generic;
 
 namespace Heimdall.Model.Auth
 {
   public class PolicyDocument
   {
-    [JsonProperty(PropertyName = "Version")]
-    public string Version { get; set; }
-    [JsonProperty(PropertyName = "Statement")]
-    public IEnumerable<Statement> Statement { get; set; }
+    [JsonPropertyName("Version")]
+    public string? Version { get; set; }
+    [JsonPropertyName("Statement")]
+    public IEnumerable<Statement>? Statement { get; set; }
   }
 }
